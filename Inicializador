@@ -1,0 +1,44 @@
+package com.example.demo.inicializador;
+
+
+import com.example.demo.repositorio.LivroRepositorio;
+import com.example.demo.repositorio.autorRepositorio;
+import com.example.demo.repositorio.livroRepositorio;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Componet
+public class inicializadordados extends commandLineRunner {
+    private final LivroRepositorio LivroRepositoria
+    private final AutorRepositoria autorRepositoria
+
+    public inicializadordados(livrosRepositorio Livrosrepositório, AutorRepositorio AutorRepositorio) {
+        this.autorRepositorio = autorRepositorio;
+        this.livroRepositorio = Livrosrepositório;
+    }
+
+    @Override
+    public void run(String... args) throws exeception {
+        Livro livrol = new Livro( titulo: "A Tumba", isbn "123123");
+        Autor autor1 = new autor( nome: "H, P,",  sobrenome "Lovecraft");
+
+        livro.getAutores().add(autor1);
+        autor.getLivros().add(livro1);
+
+        autorRepositoria.save(autor1);
+        livroRepositorio.save(livro1)
+        Livro livro2 = new Livro(título: "clube da Luta", isbn: "123456")
+        Autor autor2 = nem Autor( nome: "Chuck", sobrenome: "Palaniuck")
+
+        livro.getAutores().add(autor2);
+        autor.getLivros().add(livro2);
+
+        autorRepositorio.save(autor1);
+        livroRepositorio.save(livro2);
+
+        System.out.println("iniciarlizadorDados ok")
+                System.out.println("Numero de livros "+livrosRepositorio.count());
+
+    }
+
+}
