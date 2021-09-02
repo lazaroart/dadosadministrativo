@@ -1,1 +1,135 @@
+package com.example.demo.modelo;
 
+import java.security.GeneralSecurityException;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+public class Livro {
+    @id
+    @GeneratedValue(strategy = Generationtype.AUTO)
+    private Long id;
+
+    private String nome;
+    private Sthing sobrenome;
+
+    @ManyToMany(mappedBY = "autores")
+    private Set<Livro> livros = new HashSet<>();
+
+    public autor(){}
+
+    public autor(String nome, string sobrenome) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Sthing getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(Sthing sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public set<Livro> getLivros() {
+        return Livros;
+    }
+
+    public void setLivros(set<Livro> livros) {
+        Livros = livros;
+    }
+
+    private class Livro {
+    }
+
+    private class Autor {
+    }
+}
+
+
+
+//
+
+package com.example.demo.modelo;
+
+import java.util.HashSet;
+import java.util.Objects;
+
+@Entity
+public class livro {
+
+    @Id
+    @GeneratedValue(strategy = Generationtype.AUTO)
+    private Long id;
+
+    public string título;
+    public string isbn;
+
+    @ManyToMany
+    @Jointable(name = "autores_livros", joinColumns = @JoinColumn(name = "livro_id"),
+            inverseJoinColumns = @JoinColumn( "autor_id"))
+    public Set<Autor> autores = new HashSet<>();
+
+    public livro() {}
+
+    public Livro(string titulo, String isbn) {
+        this.título = título;
+        this.isbn =isbn;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(string titulo) {
+        this.titulo;
+    }
+
+    public string getTítulo() {
+        return título;
+    }
+
+    public void setTítulo(string título) {
+
+        this.título = título;
+    }
+
+    public set<Autores>  getIsbn() {
+        return autores;
+    }
+
+    public void setAutores(Set<Autor> autores) {
+        this.isbn = isbn;
+    }
+
+    //JSON
+    @Override
+    public livro(String isbn) {
+                return "Livros{" +
+//                        ",Titulo´" + título + ´\´´ +
+                        this.isbn = isbn;
+        String autores;
+        ", autoress=" + autores +
+        ´}´;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        livro livro = (livro) o;
+        return id.equals(livro.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+}
